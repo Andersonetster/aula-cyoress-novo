@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/Andersonetster/aula-cypress-novo#readme",
   "dependencies": {
+    "faker": "^6.6.6",
+    "faker-br": "^0.4.1"
+  },
+  "devDependencies": {
     "cypress": "^9.5.1"
   }
 }
