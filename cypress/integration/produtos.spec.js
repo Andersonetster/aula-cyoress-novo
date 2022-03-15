@@ -4,7 +4,12 @@ describe('Funcionalidade página de produtos', () => {
 
     beforeEach(() => {
 
-        cy.visit('http://lojaebac.ebaconline.art.br/produtos/')
+        //modo simples de acessar o site
+        //cy.visit('http://lojaebac.ebaconline.art.br/produtos/')
+        
+        //utilizando boa praticas configuração feita no arquivo cypress.json
+        cy.visit('/produtos')
+        
     });
 
     it('Deve selecionar um produto da lista', () => {

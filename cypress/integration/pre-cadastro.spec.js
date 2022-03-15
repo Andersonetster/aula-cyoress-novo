@@ -7,7 +7,11 @@ describe('Funcionalidade pré cadastro', () => {
     //comando visitar site
     beforeEach(() => {
 
-        cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
+        //modo simples de acessar o site
+        //cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
+
+        //utilizando boa praticas configuração feita no arquivo cypress.json
+        cy.visit('/minha-conta/')
         
     });
 
