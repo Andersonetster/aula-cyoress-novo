@@ -24,7 +24,7 @@ context('Funcionalidade login', () => {
         
     });
 
-    it('Deve fazer login com sucesso', () => {
+    it.only('Deve fazer login com sucesso', () => {
         //forma inicial de visitar a página com cy.visit
         //cy.visit('http://lojaebac.ebaconline.art.br/minha-conta')
         cy.get('#username').type ('aluno_ebac@teste.com')
@@ -42,7 +42,7 @@ context('Funcionalidade login', () => {
         //ambiente configurado na pasta fixtures/perfil.json para usuario e senha
         //nesse mesmo arquivo na linha 2 comando para puxar o arquivo perfil.json
         cy.get('#username').type (perfil.usuario)
-        cy.get('#password').type (perfil.senha)
+        cy.get('#password').type (perfil.senha)//{log:false} para ocultar a senha
         cy.get('.woocommerce-form > .button').click ()
 
         //validação do teste
@@ -50,7 +50,7 @@ context('Funcionalidade login', () => {
 
     });
 
-    it.only('Deve fazer login com sucesso - usando fixture', () => {
+    it('Deve fazer login com sucesso - usando fixture', () => {
         //mais uma forma de boa praticas de configuração de login
 
         cy.fixture('perfil').then(dados => {

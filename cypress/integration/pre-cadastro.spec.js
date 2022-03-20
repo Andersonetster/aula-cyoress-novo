@@ -49,7 +49,7 @@ describe('Funcionalidade pré cadastro', () => {
     });
 
 
-    it.only('Deve completar o pré cadastro com sucesso cadastro faker comandos variavel', () => {
+    it('Deve completar o pré cadastro com sucesso cadastro faker comandos variavel', () => {
 
         //usando comando variavel
         let nomeFaker =faker.name.firstName()
@@ -63,6 +63,14 @@ describe('Funcionalidade pré cadastro', () => {
         cy.get('#account_first_name').type(nomeFaker)
         cy.get('#account_last_name').type(sobrenomeFaker)
         cy.get('.woocommerce-Button').click()
+
+        cy.get('.woocommerce-message').should('contain' , 'Detalhes da conta modificados com sucesso')
+        
+    });
+    //teste puxando do arquivo commands.js linha 36
+    it.only('Deve completar o pré cadastro com sucesso usando comandos customizados', () => {
+        let emailFaker2 =faker.internet.email()
+        cy.preCadastro(emailFaker2,'m45t3r@2014','anderson','santos') 
 
         cy.get('.woocommerce-message').should('contain' , 'Detalhes da conta modificados com sucesso')
         
